@@ -1,4 +1,14 @@
+import { weatherUnitChange } from "../composables/FahreinheitConverter";
+import { weatherIcon } from "../composables/WeatherIcon";
+
 const WeatherCard = ({ isDay, weatherData, formattedTime, isCelsius }) => {
+  const weatherImage = weatherIcon(weatherData.weather[0].main);
+
+  const currTemp = weatherUnitChange(weatherData.main.temp, isCelsius);
+  const feelsLikeTemp = weatherUnitChange(
+    weatherData.main.feels_like,
+    isCelsius
+  );
   return (
     <div
       className={`h-auto w-full md:w-[628px] flex flex-col mx-auto rounded-3xl ${
@@ -16,25 +26,11 @@ const WeatherCard = ({ isDay, weatherData, formattedTime, isCelsius }) => {
         </div>
       </div>
       <div className="flex flex-col -mt-2 items-center justify-center">
-        <img
-          src={
-            weatherData.weather[0].main === "Clear"
-              ? "/clear.svg"
-              : weatherData.weather[0].main === "Rain"
-              ? "/rain.svg"
-              : weatherData.weather[0].main === "Clouds"
-              ? "/cloudy.svg"
-              : "/cloudy.svg"
-          }
-          alt="weather"
-          className="!h-32"
-        />
+        <img src={weatherImage} alt="weather" className="!h-32" />
         <div className="flex gap-x-2">
           <img src="/temperature-icon.svg" alt="temp" className="!h-8" />
           <p className="text-2xl font-bold">
-            {!isCelsius
-              ? `${weatherData.main.temp.toFixed()}°C`
-              : `${(weatherData.main.temp * 1.8 + 32).toFixed()}°F`}
+            {currTemp}
             <br />
             <span className="font-semibold !text-lg">
               {weatherData.weather[0].main}
@@ -48,9 +44,7 @@ const WeatherCard = ({ isDay, weatherData, formattedTime, isCelsius }) => {
           <p className="text-md">Humidity</p>
         </div>
         <div className="flex flex-col gap-y-0.5 text-center">
-          <p className="text-lg">{!isCelsius
-              ? `${weatherData.main.feels_like.toFixed()}°C`
-              : `${(weatherData.main.feels_like * 1.8 + 32).toFixed()}°F`}</p>
+          <p className="text-lg">{feelsLikeTemp}</p>
           <p className="text-md">Feels Like</p>
         </div>
       </div>
