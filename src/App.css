@@ -1,12 +1,7 @@
-.app {
-  position: relative;
-  background-color: rgb(26, 28, 28);
-  color: white
-}
 .loader {
-  border: 4px solid rgba(255, 255, 255, 0.3);
+  border: 4px solid #bac9fb;
   border-radius: 50%;
-  border-top: 4px solid #ffffff;
+  border-top: 4px solid #004ee4;
   width: 100px;
   height: 100px;
   animation: spin 1s linear infinite;
@@ -22,9 +17,13 @@
 }
 
 .gradient-text {
-  font-size: 48px; /* Adjust the font size as needed */
+  font-size: 30px; /* Adjust the font size as needed */
   font-weight: bold; /* Adjust the font weight as needed */
-  background:  linear-gradient(90.85deg, #004EE4 39.76%, #2A88BC 79.63%); /* Define your gradient */
+  background: linear-gradient(
+    90.85deg,
+    #004ee4 39.76%,
+    #7f9cff 100%
+  ); /* Define your gradient */
   -webkit-background-clip: text; /* Clip the background to the text for WebKit-based browsers */
   background-clip: text; /* Clip the background to the text */
   color: transparent; /* Make the text transparent */
@@ -56,8 +55,8 @@
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   border-radius: 34px;
 }
 
@@ -69,22 +68,65 @@
   left: 4px;
   bottom: 3px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 
 input:checked + .slider {
-  background: linear-gradient(90deg, #9ADCFF 0%, rgba(226, 245, 255, 0.62) 100%);
-  ;
+  background: linear-gradient(
+    90deg,
+    #9adcff 0%,
+    rgba(226, 245, 255, 0.62) 100%
+  );
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
   -webkit-transform: translateX(40px);
   -ms-transform: translateX(40px);
   transform: translateX(40px);
+}
+
+.imageCard {
+  height: 103px;
+  width: 107px;
+  background: #e2fff5;
+  opacity: 40;
+  flex: 1 1 20px;
+  margin: 10px;
+  border-radius: 25px;
+  transition: 0.7s ease-in-out;
+}
+.imageCard img {
+  height: 103px;
+  width: 100%;
+  object-fit: cover;
+}
+.imageCard:hover {
+  flex: 3 1 20px;
+  background: #e2fff5;
+}
+
+.react-multi-carousel-dot.react-multi-carousel-dot--active button {
+  width: 120px !important;
+  border-radius: 25px !important;
+  border: 1px solid transparent !important;
+  background: linear-gradient(90deg, #5a7fff 0%, #364c99 100%) !important;
+}
+
+.react-multi-carousel-list {
+  padding: 0rem 0 2rem 0;
+}
+.react-multi-carousel-track {
+  margin-bottom: 20px !important;
+}
+.graph-container {
+  height: 30% !important;
+  @media (max-width: 768px) {
+    height: 170px !important;
+  }
 }

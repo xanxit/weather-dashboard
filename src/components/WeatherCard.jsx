@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { weatherUnitChange } from "../composables/FahreinheitConverter";
 import { weatherIcon } from "../composables/WeatherIcon";
 

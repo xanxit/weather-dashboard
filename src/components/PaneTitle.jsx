@@ -1,10 +1,15 @@
-const PanelTitle = () => {
+/* eslint-disable react/prop-types */
+const PanelTitle = ({ text, gradientText, titleClass }) => {
   return (
-    <div className="text-4xl text-center md:text-5xl flex flex-col justify-center items-center gap-y-2">
-      <p>{"Empowering You with Weather Wisdom "}</p>
-      <p className="gradient-text">
-        Every Forecast, Every Moment!
-      </p>
+    <div
+      className={
+        titleClass
+          ? titleClass
+          : `text-2xl md:text-3xl flex flex-col justify-center items-center gap-y-2 font-semibold`
+      }
+    >
+      <p>{text}</p>
+      <p className="gradient-text">{gradientText}</p>
     </div>
   );
 };

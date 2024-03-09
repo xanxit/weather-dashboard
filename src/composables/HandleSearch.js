@@ -1,7 +1,14 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const handleSearch = async (location, setWeatherData, setLoading, setError) => {
+const handleSearch = async (
+  location,
+  setWeatherData,
+  setLoading,
+  setError,
+  forcastData,
+  setForcastData
+) => {
   setLoading(true);
   try {
     const res = await axios.get(
@@ -9,7 +16,18 @@ const handleSearch = async (location, setWeatherData, setLoading, setError) => {
         import.meta.env.VITE_API_KEY
       }&units=metric`
     );
+    const forcastResponse = await axios.get(
+      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${
+        import.meta.env.VITE_API_KEY
+      }&units=metric`
+    );
+    const filteredForcastData = forcastResponse.data.list.map((item) => ({
+      temp: item.main.temp,
+      dt_txt: item.dt_txt.split(" ")[0],
+    }));
+    setForcastData(filteredForcastData);
     setWeatherData(res.data);
+    localStorage.setItem("forcastData", JSON.stringify(filteredForcastData))
     localStorage.setItem("weatherData", JSON.stringify(res.data));
     setError(null);
   } catch (err) {
