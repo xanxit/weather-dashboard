@@ -16,7 +16,7 @@ const DefaultUI = () => {
               sequence={[
                 // Same substring at the start will only be typed out once, initially
                 "city's temperature",
-                2000, // wait 1s before replacing "Mice" with "Hamsters"
+                2000, // wait 1s before replacing "temperature" with "humidity"
                 "city's humidity",
                 2000,
                 "city's visibility",
