@@ -9,10 +9,6 @@ import {
 } from "recharts";
 
 const ForcastGraph = (forcastData) => {
-  // useEffect(()=>{
-
-  // },[])
-  // console.log(forcastData.forcastData)
   const graphData = forcastData.forcastData;
   return (
     <>

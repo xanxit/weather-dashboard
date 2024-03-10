@@ -59,44 +59,6 @@ const App = () => {
     minute: "2-digit",
   });
   return (
-    // <div
-    //   className="text-white h-screen w-full flex flex-col gap-y-10"
-    //   style={{
-    //     backgroundImage: `url(${bgImage})`,
-    //     backgroundPosition: "center",
-    //     backgroundSize: "cover",
-    //     backgroundRepeat: "no-repeat",
-    //     width: "100vw",
-    //     height: "100vh",
-    //   }}
-    // >
-    //   <ToastContainer />
-    //   <div className="px-10 pt-10 pb-4">
-    //     <PanelTitle />
-    //   </div>
-    //   <div className="flex flex-wrap mx-auto justify-center gap-10">
-    //     <SearchBar
-    //       location={location}
-    //       setLocation={setLocation}
-    //       handleKeyDown={handleKeyDown}
-    //     />
-    //   </div>
-    //   {loading ? (
-    //     <div className="flex justify-center items-center">
-    //       <div className="loader"></div>
-    //     </div>
-    //   ) : null}
-    //   {Object.keys(weatherData).length && !loading && error === null ? (
-    //     <WeatherCard
-    //       isDay={isDay}
-    //       weatherData={weatherData}
-    //       formattedTime={formattedTime}
-    //       handleToggle={handleToggle}
-    //       isCelsius={isCelsius}
-    //     />
-    //   ) : null}
-    //   <Carousel/>
-    // </div>
     <section className="min-h-screen overflow-x-hidden">
       <SideBar />
       <div className="w-full lg:pl-[118px] min-h-screen">
