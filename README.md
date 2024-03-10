@@ -10,9 +10,12 @@ This app predicts the current temperature, humidity, wind speed and other weathe
 - ### Current Weather Metric
   The app gives you the last and most accurate weather metrics for your city.
 
+  ![current](https://github.com/xanxit/weather-dashboard/blob/master/public/current.png)
+
 - ### 5-day forecast
   The app gives you the forecast of the weather conditions in your city.
 
+  ![forecast](https://github.com/xanxit/weather-dashboard/blob/master/public/forecast.png)
 
 - ### Persisting last search
   The app persists last searched city and its weather condition.
