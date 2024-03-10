@@ -32,7 +32,7 @@ const AnimatingCards = () => {
             className="group-hover:hidden rounded-lg"
             alt="first card"
           />
-          <div className="hidden p-4 group-hover:flex flex-row gap-6 transition ease-in-out delay-700">
+          <div className="hidden p-4 group-hover:flex flex-row gap-6 transition delay-700">
             <img
               src="/image-2.webp"
               height={60}

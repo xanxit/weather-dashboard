@@ -4,14 +4,13 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PanelTitle from "./components/PaneTitle";
 import SearchBar from "./components/SearcBar";
-import WeatherCard from "./components/WeatherCard";
-import { isDay, bgImage } from "./composables/DayNightChecker";
 import handleSearch from "./composables/HandleSearch";
 import Carousel from "./components/Carousel";
 import SideBar from "./components/SideBar";
 import AnimatingCards from "./components/AnimatingCards";
 import WeatherDisplay from "./components/WeatherDisplay";
 import ForcastGraph from "./components/ForcastGraph";
+import DefaultUI from "./components/DefaultUI";
 
 const App = () => {
   const [location, setLocation] = useState("");
@@ -59,7 +58,6 @@ const App = () => {
     hour: "numeric",
     minute: "2-digit",
   });
-
   return (
     // <div
     //   className="text-white h-screen w-full flex flex-col gap-y-10"
@@ -103,6 +101,7 @@ const App = () => {
       <SideBar />
       <div className="w-full lg:pl-[118px] min-h-screen">
         {/* <div className="border-b h-24 sticky"></div> */}
+        <ToastContainer />
         <div className="grid grid-cols-1 md:grid-cols-2 md:pl-9 min-h-screen">
           <div className="flex flex-col pt-8">
             <PanelTitle
@@ -119,37 +118,47 @@ const App = () => {
               forcastData={forcastData}
               setForcastData={setForcastData}
             />
-            {loading ? (
-              <div className="flex justify-center items-center mt-20">
-                <div className="loader"></div>
+            {Object.keys(weatherData).length ||
+            Object.keys(forcastData).length || loading ? (
+              <div>
+                {loading ? (
+                  <div className="flex justify-center items-center mt-20">
+                    <div className="loader"></div>
+                  </div>
+                ) : null}
+                {Object.keys(weatherData).length &&
+                !loading &&
+                error === null ? (
+                  <>
+                    <WeatherDisplay
+                      weatherData={weatherData}
+                      formattedTime={formattedTime}
+                    />
+                    <PanelTitle
+                      text="Temperature Forecast"
+                      titleClass="text-xl md:text-2xl flex flex-col justify-center items-left gap-y-2 font-semibold pl-4"
+                    />
+                    <ForcastGraph forcastData={forcastData} />
+                  </>
+                ) : null}
               </div>
-            ) : null}
-            {Object.keys(weatherData).length && !loading && error === null ? (
-              <>
-                <WeatherDisplay
-                  weatherData={weatherData}
-                  formattedTime={formattedTime}
-                />
-                <PanelTitle
-                  text="Temperature Forecast"
-                  titleClass="text-xl md:text-2xl flex flex-col justify-center items-left gap-y-2 font-semibold pl-4"
-                />
-                <ForcastGraph forcastData={forcastData} />
-              </>
-            ) : null}
+            ) : (
+              <DefaultUI />
+            )}
           </div>
           <div className="border-l bg-[#FAFBFF] pt-8">
             <PanelTitle
               text="Explore the weather of the world"
               gradientText="with the weather app"
             />
-            <Carousel location={location} 
-            setLocation={setLocation} 
-            setWeatherData={setWeatherData}
-            setLoading={setLoading}
-            setError={setError}
-            forcastData={forcastData}
-            setForcastData={setForcastData}
+            <Carousel
+              location={location}
+              setLocation={setLocation}
+              setWeatherData={setWeatherData}
+              setLoading={setLoading}
+              setError={setError}
+              forcastData={forcastData}
+              setForcastData={setForcastData}
             />
             <div className="pt-8">
               <PanelTitle

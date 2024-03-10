@@ -28,6 +28,18 @@
   background-clip: text; /* Clip the background to the text */
   color: transparent; /* Make the text transparent */
 }
+.gradient-text2 {
+  font-size: 48px; /* Adjust the font size as needed */
+  font-weight: bold; /* Adjust the font weight as needed */
+  background: linear-gradient(
+    90.85deg,
+    #004ee4 39.76%,
+    #7f9cff 100%
+  ); /* Define your gradient */
+  -webkit-background-clip: text; /* Clip the background to the text for WebKit-based browsers */
+  background-clip: text; /* Clip the background to the text */
+  color: transparent; /* Make the text transparent */
+}
 
 .toggle-container {
   display: flex;
