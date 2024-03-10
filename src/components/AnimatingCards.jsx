@@ -16,7 +16,7 @@ const AnimatingCards = () => {
               className="!h-[60px] !w-[59px] rounded-lg"
               alt="first image"
             />
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 min-w-40">
               <h1 className="text-md font-semibold">
                 {" "}
                 Strange Cloud <br />
@@ -40,7 +40,7 @@ const AnimatingCards = () => {
               className="!h-[60px] !w-[59px] rounded-lg"
               alt="first image"
             />
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 min-w-40">
               <h1 className="text-md font-semibold">
                 {" "}
                 Strange Cloud <br />
@@ -56,7 +56,7 @@ const AnimatingCards = () => {
             className="group-hover:hidden rounded-lg"
             alt="first card"
           />
-          <div className="hidden p-4 group-hover:flex flex-row gap-6 transition ease-in-out delay-700">
+          <div className="hidden p-4 group-hover:flex gap-6 transition transform ease-in-out delay-100">
             <img
               src="/image-3.webp"
               height={60}
@@ -64,7 +64,7 @@ const AnimatingCards = () => {
               className="!h-[60px] !w-[59px] rounded-lg"
               alt="first image"
             />
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 min-w-40">
               <h1 className="text-md font-semibold">
                 {" "}
                 Strange Cloud <br />
