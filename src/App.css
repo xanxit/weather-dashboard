@@ -39,6 +39,10 @@
   -webkit-background-clip: text; /* Clip the background to the text for WebKit-based browsers */
   background-clip: text; /* Clip the background to the text */
   color: transparent; /* Make the text transparent */
+  @media(max-width: 768px)
+  {
+    font-size: 36px;
+  }
 }
 
 .toggle-container {
