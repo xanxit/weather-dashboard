@@ -25,7 +25,6 @@ const DefaultUI = () => {
                 2000,
               ]}
               wrapper="span"
-              speed={100}
               repeat={Infinity}
               className="gradient-text2"
             />
