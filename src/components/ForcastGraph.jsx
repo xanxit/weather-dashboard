@@ -12,7 +12,7 @@ const ForcastGraph = (forcastData) => {
   const graphData = forcastData.forcastData;
   return (
     <>
-      <ResponsiveContainer width="100%" className="md:!-ml-10 -ml-4 mt-8 graph-container">
+      <ResponsiveContainer width="100%" className="md:!-ml-6 -ml-4 mt-8 graph-container">
         <AreaChart
           width={500}
           height={100}

@@ -5,7 +5,7 @@ const PanelTitle = ({ text, gradientText, titleClass }) => {
       className={
         titleClass
           ? titleClass
-          : `text-2xl md:text-3xl flex flex-col justify-center items-center gap-y-2 font-semibold`
+          : `text-2xl md:text-3xl flex flex-col justify-center items-center gap-y-2 font-semibold text-center`
       }
     >
       <p>{text}</p>

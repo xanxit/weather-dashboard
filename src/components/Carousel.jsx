@@ -2,37 +2,16 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import handleSearch from "../composables/HandleSearch";
+import slideShowData from "../data/slideshowdata";
 
-function Responsive({
+const LeftCarousel =({
   setLocation,
   setWeatherData,
   setLoading,
   setError,
   forcastData,
   setForcastData,
-}) {
-  const slideShowData = [
-    {
-      city: "Moscow",
-      state: "Russia",
-      image: "/carousel/card-3.webp",
-    },
-    {
-      city: "Tokyo",
-      state: "Japan",
-      image: "/carousel/card-2.webp",
-    },
-    {
-      city: "Kyiv",
-      state: "Ukraine",
-      image: "/carousel/card.webp",
-    },
-    {
-      city: "Bengaluru",
-      state: "India",
-      image: "/carousel/card-1.webp",
-    },
-  ];
+}) =>{
 
   const handleSearchFromCarousal = (item) => {
     const { city } = item;
@@ -59,12 +38,12 @@ function Responsive({
     },
     mobile: {
       breakpoint: { max: 767, min: 464 },
-      items: 2,
-      slidesToSlide: 2, // optional, default to 1.
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
     },
   };
   return (
-    <div className="slider-container mt-12">
+    <div className="mt-12">
       <Carousel
         responsive={responsive}
         showDots={true}
@@ -99,4 +78,4 @@ function Responsive({
   );
 }
 
-export default Responsive;
+export default LeftCarousel;

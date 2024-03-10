@@ -11,7 +11,7 @@ const SearchBar = ({
   setForcastData,
 }) => {
   return (
-    <div className="flex justify-start gap-x-6 pl-4 pt-8 items-center relative">
+    <div className="flex justify-start gap-x-6 pl-2 pt-8 items-center relative">
       <img
         src="/search-icon.svg"
         alt="search icon"
@@ -25,11 +25,11 @@ const SearchBar = ({
         onKeyDown={handleKeyDown}
         placeholder="Search for cities"
         type="text"
-        className="pl-12 pr-8 py-3 relative text-lg rounded-3xl bg-transparent outline-[#AAB0C7] placeholder:text-[#737396] w-[440px]"
+        className="pl-12 lg:pr-8 py-3 relative text-lg rounded-3xl bg-transparent outline-[#AAB0C7] placeholder:text-[#737396] w-[220px] lg:w-[440px]"
         style={{ border: "1px solid #AAB0C7" }}
       />
       <button
-        className="border md:w-[125px] h-[52px] w-full rounded-3xl text-white hover:scale-95 disabled:opacity-65 cursor-pointer"
+        className="border md:w-[125px] h-[52px] w-full rounded-3xl text-white hover:scale-95 disabled:opacity-65 disabled:hover:scale-100 cursor-pointer disabled:cursor-default"
         onClick={() =>
           handleSearch(
             location,

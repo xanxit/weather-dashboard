@@ -68,7 +68,7 @@ const App = () => {
           <div className="flex flex-col pt-8">
             <PanelTitle
               text="Weather Reports"
-              titleClass="text-2xl md:text-3xl flex flex-col justify-center items-left gap-y-2 font-semibold pl-4"
+              titleClass="text-2xl md:text-3xl flex flex-col justify-center items-left gap-y-2 font-semibold pl-2"
             />
             <SearchBar
               location={location}
@@ -98,7 +98,7 @@ const App = () => {
                     />
                     <PanelTitle
                       text="Temperature Forecast"
-                      titleClass="text-xl md:text-2xl flex flex-col justify-center items-left gap-y-2 font-semibold pl-4"
+                      titleClass="text-xl md:text-2xl flex flex-col justify-center items-left gap-y-2 font-semibold pl-2"
                     />
                     <ForcastGraph forcastData={forcastData} />
                   </>
@@ -112,6 +112,7 @@ const App = () => {
             <PanelTitle
               text="Explore the weather of the world"
               gradientText="with the weather app"
+
             />
             <Carousel
               location={location}
